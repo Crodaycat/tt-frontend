@@ -1,0 +1,12 @@
+<h1>Editar flor</h1>
+
+<ng-container *ngIf="!isLoading; else loadingContainer">
+  <app-flowers-form
+    *ngIf="!!flower"
+    [isEdit]="true"
+    [defaultValue]="flower"
+    (onSubmit)="onSubmit($event)"
+  ></app-flowers-form>
+</ng-container>
+
+<ng-template #loadingContainer> Cargando... </ng-template>
